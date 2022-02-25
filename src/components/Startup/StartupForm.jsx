@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form'
 import '../../App.css'
+import { loginUser } from '../../api/user'
+import { useState } from 'react'
 
 const usernameConfig = {
     required: true,
@@ -7,16 +9,23 @@ const usernameConfig = {
 }
 
 const StartupForm = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm()
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const [ loading, setLoading ] = useState(false);
+    const [ apiError, setApiError ] = useState(null);
+
+    const onSubmit = async ({username}) => {
+        setLoading(true);
+        const [ error, user] = await loginUser(username);
+        console.log('Error: ', error);
+        console.log('User: ', user);
+        setLoading(false);
     }
-    console.log(errors);
+    // console.log(errors);
 
     const errorMessage = (() => {
         if (!errors.username) {
-            return null
+            return null;
             
         }
 
@@ -41,7 +50,9 @@ return (
                {errorMessage}
             </fieldset>
 
-            <button type="submit">Continue to translation</button>
+            {/* button is disabled if loading = true */}
+            <button type="submit" disabled={loading}>Continue to translation</button>
+            { loading && <p>One second, logging in...</p>}
         </form>
     </>
 )
