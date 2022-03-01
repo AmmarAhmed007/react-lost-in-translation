@@ -17,6 +17,7 @@ ul {
     overflow: hidden;
 }
 
+
 img:hover {
     box-shadow: 10px 10px 5px #E7B355;
 }
@@ -161,4 +162,9 @@ button:hover {
 
 .startButton {
     margin-left: 40%;
+}
+
+.startupFieldset {
+    /* display: inline-flex;
+    background-color: #ccc; */
 }
