@@ -1,10 +1,11 @@
 # React - Lost in translation
 
-A online sign language translator as a Single Page Application (SPA) using the React Framework. This application is deployed to Heroku as well: https://react-translation-to-sign.herokuapp.com/
+A online sign language translator as a Single Page Application (SPA) using the React Framework. This application is published to Heroku as well: https://react-translation-to-sign.herokuapp.com/
 
 ## Install
-This project was created using npx: 
-``` npx create-react-app react-lost-in-translation ```
+This project was bootstrapped with npm. In the project directory, run command:
+``` npm start ```
+This will run the application on localhost.
 
 ## Description
 The applications main feature is to translate regular text to sign language. This will translate English words and short sentences to American sign language. The application is divided into three main pages: Startup/login page, translator page, and a profile page
