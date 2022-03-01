@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import { STORAGE_KEY_USER } from "../../const/storageKeys"
 import { useUser } from "../../context/UserContext"
 import { storageDelete, storageSave } from "../../utils/storage"
@@ -6,7 +5,7 @@ import { storageDelete, storageSave } from "../../utils/storage"
 
 const ProfileActions = () => {
 
-    const {user, setUser} = useUser()
+    const { user, setUser } = useUser()
 
     const logOutClick = () => {
         if (window.confirm('Are you sure you want to log out?')) {
@@ -22,7 +21,7 @@ const ProfileActions = () => {
 
         const [error] = await clearHistoryClick(user.id);
 
-        if(error !== null) {
+        if (error !== null) {
             return;
         }
 
@@ -34,13 +33,12 @@ const ProfileActions = () => {
         storageSave(STORAGE_KEY_USER, newUser)
         setUser(newUser)
     }
- 
+
     return (
-        <ul>
-            <li><Link to="/translation">Translations</Link></li>
-            <li><button onClick={clearHistoryClick}>Clear history</button></li>
-            <li><button onClick={logOutClick}>Log out</button></li>
-        </ul>
+        <div className="actionButtons">
+            <button onClick={clearHistoryClick}>Clear history</button>
+            <button onClick={logOutClick} className="logOutButton">Log out</button>
+        </div>
     )
 }
 

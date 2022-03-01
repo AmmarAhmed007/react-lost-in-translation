@@ -7,21 +7,23 @@ const Navbar = () => {
 
     return (
         <nav>
-            <ul>
-                <li>Translations</li>
-            </ul>
-
             {user !== null &&
-                <ul>
-                    <li>
-                        <NavLink to="/translation">Translations</NavLink>
+                <ul class="navUl">
+                    <li className="profileImage">
+                        <NavLink to="/translation">
+                            <img src="translate.svg" alt="" height={45}></img>
+                        </NavLink>
+                    </li>
+                    <li className="profileImage">
+                        <NavLink to="/profile">
+                            <img src="person.svg" alt="" height={45}></img>
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/profile">Profile</NavLink>
+                        <p class="startNav">Lost in translation</p>
                     </li>
                 </ul>
             }
-
         </nav>
     )
 }

@@ -35,11 +35,9 @@ const Translation = () => {
     }
     return (
         <>
-            <h2>Translation page</h2>
-
             <section id="translate-word">
                 <TranslationForm onTranslate={handleSubmitTranslation} />
-                <div>
+                <div class="translationSignsDiv shadow p-3 mb-5 bg-white rounded">
                     <h3>
                         {translation}
                     </h3>
