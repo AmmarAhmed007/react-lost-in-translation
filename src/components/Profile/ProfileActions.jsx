@@ -1,3 +1,4 @@
+import { clearHistory } from "../../api/translation"
 import { STORAGE_KEY_USER } from "../../const/storageKeys"
 import { useUser } from "../../context/UserContext"
 import { storageDelete, storageSave } from "../../utils/storage"
@@ -19,7 +20,7 @@ const ProfileActions = () => {
             return;
         }
 
-        const [error] = await clearHistoryClick(user.id);
+        const [error] = await clearHistory(user.id);
 
         if (error !== null) {
             return;

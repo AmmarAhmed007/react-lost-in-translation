@@ -70,16 +70,16 @@ const StartupForm = () => {
                 </div>
                 <div class="startupSubmit">
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <fieldset>
+                        <fieldset className='startupFieldset'>
                             <label htmlFor="username"></label>
                             <input type="text" placeholder="Type in your username"
                                 {...register("username", usernameConfig)}>
                             </input>
                             {errorMessage}
+                            <button class="startButton" type="submit" disabled={loading}>Continue to translation</button>
                         </fieldset>
 
                         {/* button is disabled if loading = true */}
-                        <button class="startButton" type="submit" disabled={loading}>Continue to translation</button>
                         {loading && <p class="animate__animated animate__slideInDown">One second, logging in...</p>}
                         {apiError && <p>{apiError} </p>}
                     </form>
