@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# React - Lost in translation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A online sign language translator as a Single Page Application (SPA) using the React Framework. This application is deployed to Heroku as well: https://react-translation-to-sign.herokuapp.com/
 
-## Available Scripts
+## Install
+This project was created using npx: 
+``` npx create-react-app react-lost-in-translation ```
 
-In the project directory, you can run:
+## Description
+The applications main feature is to translate regular text to sign language. This will translate English words and short sentences to American sign language. The application is divided into three main pages: Startup/login page, translator page, and a profile page
+### The Startup page
+This is the page that the user firstly arrives to and a user should here be able to enter their username. The username will then be added to the Translation API. Once the username has been successfully entered, the user can move to the translation page, by clicking on the "Continue to translation" button. Users that are already logged in will automatically be redirected to the Translation Page. The local storage handles the users session.
+### The Translation page
+This is the main page and user may only see this if the login was successful. A user can here type in a word in the input field and click on "Translate" to translate the word to signs. The translations then gets stored in the API for the user. 
+### **The Profile page**
+The profile page have some information and actions available:
+* The current user can see their 10 last translations done previously.
+* There is also a "clear history" button which clears the previous translations and also applies it to the Translation API. 
+* A Logout button is also available here for the current user to the end their session. The current user will then be redirected back to the Startup page. 
 
-### `npm start`
+## Features/tools
+* React framework
+* React router
+* API
+* Redux Toolkit: https://redux-toolkit.js.org
+* Figma - design of the component tree (done before coding)
+* Visual Studio Code
+* Heroku
+* Rest API: https://github.com/dewald-els/noroff-assignment-api
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Developer and Author
+* Ammar Ahmed
